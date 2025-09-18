@@ -18,7 +18,6 @@ cmds = [
 ]
 
 [phases.build]
-
 cmds = [
 "chmod +x /app/boot.sh",
 "echo 'Linking OpenCV dependencies...'",
