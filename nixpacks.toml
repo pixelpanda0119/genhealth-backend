@@ -19,7 +19,7 @@ cmds = [
 
 [phases.build]
 cmds = [
-"chmod +x /app/boot.sh",
+"chmod +x /boot.sh",
 "echo 'Linking OpenCV dependencies...'",
 "GL=$(find /nix/store -name 'libGL.so.1' | head -n 1) && ln -sf $GL /usr/lib/libGL.so.1 || echo 'libGL link failed'",
 "GLIB=$(find /nix/store -name 'libglib-2.0.so.0' | head -n 1) && ln -sf $GLIB /usr/lib/libglib-2.0.so.0 || echo 'glib link failed'",
@@ -28,4 +28,7 @@ cmds = [
 ]
 
 [start]
-cmd = "./boot.sh uvicorn app:app --host 0.0.0.0 --port 8000"
+cmds = [
+	"chmod +x ./boot.sh",
+	"./boot.sh uvicorn app:app --host 0.0.0.0 --port 8000"
+]
