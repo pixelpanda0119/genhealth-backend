@@ -1,0 +1,8 @@
+
+# Railway Nixpacks configuration
+[nixpacks]
+language = "python"
+pythonVersion = "3.10.12"
+
+[env]
+NIXPACKS_APT_PKGS = "libgl1,libglib2.0-0"
