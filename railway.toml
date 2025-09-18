@@ -1,0 +1,17 @@
+[build]
+# Use Dockerfile for custom build (recommended for OpenCV and system dependencies)
+# Uncomment the next line if you have a Dockerfile in the backend directory
+# dockerfile = "backend/Dockerfile"
+
+[deploy]
+# The command to start your backend app (adjust if you use something other than uvicorn)
+# If your app is FastAPI or similar, use:
+# start = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+# If your app is Flask, use:
+# start = "python main.py"
+start = "python main.py"
+
+[env]
+# Example environment variables
+# DATABASE_URL = "sqlite:///genhealth.db"
+# Add more as needed
