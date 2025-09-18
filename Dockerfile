@@ -9,9 +9,8 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install system dependencies
-COPY apt.txt .
 RUN apt-get update && \
-    xargs -a apt.txt apt-get install -y --no-install-recommends && \
+    apt-get install -y --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
